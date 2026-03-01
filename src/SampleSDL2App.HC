@@ -1,4 +1,4 @@
-#include "src/SDLExterns.HH"
+#include "include/SDL.HH"
 
 #define WINDOW_WIDTH 640
 #define WINDOW_HEIGHT 480
