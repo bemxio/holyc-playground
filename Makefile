@@ -1,5 +1,6 @@
 # constants
 CC = hcc
+CFLAGS = -clibs='-lSDL2'
 
 SRC_DIR = src
 BUILD_DIR = build
@@ -20,7 +21,7 @@ clean:
 	./$<
 
 $(BUILD_DIR)/%: $(SRC_DIR)/%.HC | $(BUILD_DIR)
-	$(CC) $^ -o $@
+	-$(CC) $(CFLAGS) $^ -o $@
 
 $(BUILD_DIR):
 	mkdir -p $@
