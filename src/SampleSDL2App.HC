@@ -1,4 +1,4 @@
-#include "SDLExterns.HH"
+#include "src/SDLExterns.HH"
 
 U0 Main()
 {
