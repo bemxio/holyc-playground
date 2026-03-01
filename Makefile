@@ -1,6 +1,6 @@
 # constants
 CC = hcc
-CFLAGS = -clibs='-lSDL2'
+CFLAGS = -clibs='-lSDL2 -lSDL2_image'
 
 SRC_DIR = src
 BUILD_DIR = build
