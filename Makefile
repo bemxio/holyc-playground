@@ -5,7 +5,7 @@ SRC_DIR = src
 BUILD_DIR = build
 
 SOURCES = $(wildcard $(SRC_DIR)/*.HC)
-TARGETS = $(notdir $(SOURCES:.HC=))
+TARGETS = $(patsubst $(SRC_DIR)/%.HC,$(BUILD_DIR)/%,$(SOURCES))
 
 # targets
 .PRECIOUS: $(BUILD_DIR)/%
