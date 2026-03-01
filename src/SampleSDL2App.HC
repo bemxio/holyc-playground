@@ -6,13 +6,13 @@ U0 Main()
 
   U0* window = SDL_CreateWindow("Hello from HolyC!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, 0);
   U0* renderer = SDL_CreateRenderer(window, -1, 0);
-  I32* event = MAlloc(56); // sizeof(SDL_Event) == 56, I32 will allow for reading the event type
+  U0* event = MAlloc(56); // sizeof(SDL_Event) == 56
 
   while (1)
   {
     while (SDL_PollEvent(event))
     {
-      if (*event == SDL_QUIT)
+      if (*event(I32*) == SDL_QUIT)
       {
         goto end;
       }
