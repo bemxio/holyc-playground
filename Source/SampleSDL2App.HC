@@ -1,4 +1,4 @@
-#include "include/SDL.HH"
+#include "Include/SDL.HH"
 
 #define WINDOW_WIDTH 640
 #define WINDOW_HEIGHT 480
@@ -8,12 +8,12 @@ U0 Main()
   SDL_Init(SDL_INIT_VIDEO);
   IMG_Init(IMG_INIT_PNG);
 
-  U0* window = SDL_CreateWindow("Hello from HolyC!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, 0);
-  U0* renderer = SDL_CreateRenderer(window, -1, 0);
-  U0* event = MAlloc(56); // sizeof(SDL_Event) == 56
+  U0 *window = SDL_CreateWindow("Hello from HolyC!", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WINDOW_WIDTH, WINDOW_HEIGHT, 0);
+  U0 *renderer = SDL_CreateRenderer(window, -1, 0);
+  U0 *event = MAlloc(56); // sizeof(SDL_Event) == 56
 
-  U0* texture = IMG_LoadTexture(renderer, "assets/templeos.png");
-  I32* textureRect = MAlloc(sizeof(I32) * 4);
+  U0 *texture = IMG_LoadTexture(renderer, "Assets/TempleOS.PNG");
+  I32 *textureRect = MAlloc(sizeof(I32) * 4);
 
   textureRect[0] = (WINDOW_WIDTH - 560) / 2; // x
   textureRect[1] = (WINDOW_HEIGHT - 470) / 2; // y
@@ -22,12 +22,9 @@ U0 Main()
 
   Bool loop = 1;
 
-  while (loop)
-  {
-    while (SDL_PollEvent(event))
-    {
-      if (*event(I32*) == SDL_QUIT)
-      {
+  while (loop) {
+    while (SDL_PollEvent(event)) {
+      if (*event(I32*) == SDL_QUIT) {
         loop = 0;
       }
     }

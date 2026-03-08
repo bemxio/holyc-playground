@@ -2,8 +2,8 @@
 CC = hcc
 CFLAGS = -clibs='-lSDL2 -lSDL2_image'
 
-SRC_DIR = src
-BUILD_DIR = build
+SRC_DIR = Source
+BUILD_DIR = Build
 
 SOURCES = $(wildcard $(SRC_DIR)/*.HC)
 TARGETS = $(patsubst $(SRC_DIR)/%.HC,$(BUILD_DIR)/%,$(SOURCES))
