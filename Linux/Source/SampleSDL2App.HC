@@ -1,4 +1,4 @@
-#include "Include/SDL.HH"
+#include "SDL.HH"
 
 #define WINDOW_WIDTH 640
 #define WINDOW_HEIGHT 480
@@ -12,7 +12,7 @@ U0 Main()
   U0 *renderer = SDL_CreateRenderer(window, -1, 0);
   U0 *event = MAlloc(56); // sizeof(SDL_Event) == 56
 
-  U0 *texture = IMG_LoadTexture(renderer, "Assets/TempleOS.PNG");
+  U0 *texture = IMG_LoadTexture(renderer, "TempleOS.PNG");
   I32 *textureRect = MAlloc(sizeof(I32) * 4);
 
   textureRect[0] = (WINDOW_WIDTH - 560) / 2; // x
