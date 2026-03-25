@@ -1,4 +1,4 @@
-U0 GRShow(U8 *filename)
+U0 GRShow(U8 *path)
 {
   SettingsPush;
 
@@ -8,10 +8,13 @@ U0 GRShow(U8 *filename)
   DocClear;
 
   CDC *dc = DCAlias;
-  CDC *img = GRRead(filename);
+  CDC *img = GRRead(path);
+
+  dc->color = BLACK;
+  GrRect(dc, 0, 0, GR_WIDTH, GR_HEIGHT);
 
   //GrPaletteSet(img->palette);
-  GrBlot(dc, 0, 0, img);
+  GrBlot(dc, GR_WIDTH / 2 - img->width / 2, GR_HEIGHT / 2 - img->height / 2, img);
 
   PressAKey;
 
@@ -19,14 +22,14 @@ U0 GRShow(U8 *filename)
   DCDel(dc);
 
   DCFill;
-  SettingsPop; 
+  SettingsPop;
 }
 
-U0 GRGallery(U8* dir)
+U0 GRShowTree(U8 *path)
 {
-  CDirEntry* entry = FilesFind(dir, FUF_JUST_GR);
+  CDirEntry *entry = FilesFind(path, FUF_JUST_GR);
 
-  while (entry->next) {
+  while (entry) {
     GRShow(entry->full_name);
     entry = entry->next;
   }

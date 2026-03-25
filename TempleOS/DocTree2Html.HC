@@ -20,7 +20,7 @@ U0 DocTree2Html(U8 *in, U8 *out)
       StrLastRem(path, ".");
       StrLastRem(path, ".");
       path = MStrPrint("%s/%s.html", out, path);
-
+
       //"%s -> %s\n", entry->full_name, path;
       ToHtml(entry->full_name, path);
     }
